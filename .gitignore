@@ -58,3 +58,4 @@ dkms.conf
 ./*.lss
 servo/*.lss
 servo/test_pwm_servo_kod/test_pwm_servo/Debug/memoryfile.xml
+*.xml
