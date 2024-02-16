@@ -2,7 +2,6 @@
 int in1 = 3;
 int in2 = 2;
 int enA = 4;
-int enB = 5;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(19200);
