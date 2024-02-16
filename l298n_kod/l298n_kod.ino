@@ -2,6 +2,7 @@
 int in1 = 3;
 int in2 = 2;
 int enA = 4;
+int enB = 5;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(19200);
@@ -12,6 +13,7 @@ void setup() {
   digitalWrite(in2, LOW);
   digitalWrite(enA, LOW);
 }
+// Peters kod för servo
 
 void loop() {
   // put your main code here, to run repeatedly:
