@@ -11,6 +11,8 @@
 #include "p2.h"
 #include <math.h>
 
+/*Kommentar*/
+
 int main(void)
 {
     
