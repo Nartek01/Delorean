@@ -9,7 +9,7 @@
     </li>
     </p>
     <li>
-    <strong>KOD_BIBLIOTEK =</strong> Samlingar av olika relevanta grejer till projekten, såsom kopplinschema, dokumentation, eller delkod för att få specifika komponenter att fungerar.
+    <strong>KOD_BIBLIOTEK =</strong> Samlingar av olika relevanta grejer till projekten, såsom kopplingschema, dokumentation, eller delkod för att få specifika komponenter att fungerar.
     </li>
 </ul>
 <h1>Deployment process</h1>
@@ -17,6 +17,8 @@
 Innan merg till MAIN, var minst 2st och gå igenom koden tillsammans.
 </strong>
 </p>
+
+Gör en fetch och ser om det finns ändrinar att hämta om det finns gör en pull för att få ändringar ner sparad i din dator.
 
 <strong>Om ändringar görs till hela bilen</strong>
 Gör en ny branch från MAIN och skriv dina ändringar...när det är färdig merga det till DEV och sen om bilan kan köra merga det till MAIN.
