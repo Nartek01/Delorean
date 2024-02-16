@@ -13,7 +13,7 @@ void setup() {
   digitalWrite(in2, LOW);
   digitalWrite(enA, LOW);
 }
-// Peters kod för servo
+// Tabort kod
 
 void loop() {
   // put your main code here, to run repeatedly:
