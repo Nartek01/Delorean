@@ -59,8 +59,11 @@ int main(void)
         
         /*PWM-signal i en for-loop med en wait emellan*/
         turn_right();
-        
-        
+        _delay_ms(1000);
+        turn_straight();
+        _delay_ms(1000);
+        turn_left();
+        _delay_ms(1000);
         
         //for (uint8_t i = 0; i < 3; i++)
         //{
