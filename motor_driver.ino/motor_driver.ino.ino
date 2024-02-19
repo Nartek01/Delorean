@@ -19,12 +19,13 @@ void loop() {
   int distance = 13 * pow(volts, -1);
 
   if (distance <= 10) {
-    Serial.println(distance); // Skriv ut avstånd
-    digitalWrite(in1, LOW);
-    digitalWrite(in2, LOW);
-  } else {
+    Serial.println(distance);  // Skriv ut avstånd
     digitalWrite(in1, HIGH);
+    delayMicroseconds(200);
     digitalWrite(in2, LOW);
     digitalWrite(enA, HIGH);
+  } else {
+    digitalWrite(in1, LOW);
+    digitalWrite(in2, LOW);
   }
 }
