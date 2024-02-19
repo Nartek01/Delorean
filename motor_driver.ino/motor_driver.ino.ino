@@ -8,23 +8,25 @@ void setup() {
   pinMode(in1, OUTPUT);
   pinMode(in2, OUTPUT);
   pinMode(enA, OUTPUT);
-  digitalWrite(in1, LOW);
-  digitalWrite(in2, LOW);
-  digitalWrite(enA, LOW);
+  digitalWrite(enA, HIGH);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   float volts = analogRead(sensor) * 0.00473632812;
   int distance = 13 * pow(volts, -1);
-
-  if (distance <= 10) {
-    Serial.println(distance);  // Skriv ut avstånd
+  if (distance < 10000) {
+    // Rotera motorn med urs
     digitalWrite(in1, HIGH);
-    delayMicroseconds(200);
+    digitalWrite(in2, HIGH); // PWM HÖG
+    Serial.println((distance * 50));
+    delayMicroseconds(distance);  // dumpa ut sensor värdet
+    digitalWrite(in1, HIGH);
     digitalWrite(in2, LOW);
-    digitalWrite(enA, HIGH);
+    delayMicroseconds((distance * 50));
+    // PWM LÅG
   } else {
+    // Stäng av motorn
     digitalWrite(in1, LOW);
     digitalWrite(in2, LOW);
   }
