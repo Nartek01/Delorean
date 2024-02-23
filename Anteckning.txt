@@ -1,2 +1,5 @@
 Kugghjul - genomgång:
 https://www.youtube.com/watch?v=lfoTvoybEM8&list=PPSV
+
+Selection Sort - genomgång:
+https://www.geeksforgeeks.org/selection-sort/
