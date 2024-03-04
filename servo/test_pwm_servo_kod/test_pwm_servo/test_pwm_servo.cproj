@@ -91,13 +91,16 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="array_sorter.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="p2.h">
+    <Compile Include="pwm_servo.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="pwm_servo.h">
+    <Compile Include="sensor_readings.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
