@@ -59,3 +59,4 @@ dkms.conf
 servo/*.lss
 servo/test_pwm_servo_kod/test_pwm_servo/Debug/memoryfile.xml
 *.xml
+motor_driver/.theia/launch.json
