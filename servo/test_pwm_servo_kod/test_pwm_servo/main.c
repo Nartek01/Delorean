@@ -20,14 +20,32 @@ int main(void)
     while(1)
     {
         perf_sensor_right_reading();
+        perf_sensor_left_reading();
         
-        if (c > 10)
+        if (c_r > c_l)
         {
-            servo_function(-50);
+            if (c_r > 200)
+            {
+                servo_function(-25);
+            }
+            else
+            {
+                servo_function(0);
+            }
         }
-        else
+        
+        else if (c_r < c_l)
         {
-            servo_function(0);
+            
+            if (c_l > 200)
+            
+            {
+                servo_function(25);
+            }
+            else
+            {
+                servo_function(0);
+            }
         }
     }
 }
