@@ -12,66 +12,24 @@
 #include <math.h>
 #include "pwm_servo.h"
 #include "sensor_readings.h"
+#define frwd 7
+#define bkwrd 8
 
 int main(void)
 {
+    DDRD = 0b01000000;
+    DDRC = 0b00000000;
+    
     pwm_init();
-    
-    
-    uint8_t range_low = 90;
-    uint16_t range_high = 150;
     
     while(1)
     {
-        perf_sensor_right_reading();
-        perf_sensor_left_reading();
+        PORTD = 0b01000000;
+        /*perf_sensor_front_reading();
+        pwm_function(c);*/
+        OCR1AH = 0x00;
+        OCR1AL = 0b11111111;
         
-        if (c_r > c_l)
-        {
-            /*if (c_r >  range_low && c_r < range_high)
-            {
-                servo_function(25);
-            }
-            else if ((c_r > range_high && c_r < 1023))
-            {
-                servo_function(40);
-            }*/
-            
-            if (c_r >  range_low)
-            {
-                servo_function(40);
-            }
-            
-            else
-            {
-                servo_function(0);
-            }
-        }
-        
-        else if (c_r < c_l)
-        {
-            
-            /*if (c_l > range_low && c_l < range_high)
-            
-            {
-                servo_function(-25);
-            }
-            else if (c_l > range_high && c_l < 1023)
-            
-            {
-                servo_function(-40);
-            }*/
-            
-            if (c_l >  range_low)
-            {
-                servo_function(-40);
-            }
-            
-            else
-            {
-                servo_function(0);
-            }
-        }
     }
 }
 

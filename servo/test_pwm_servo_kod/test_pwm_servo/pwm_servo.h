@@ -11,10 +11,10 @@
 
 
 /*Funktion som tolkar om värdet till PWM-värde -50 -> 50*/
-void servo_function (int8_t turning_value)
+void pwm_function (int8_t analog_value)
 {
     OCR1AH = 0x00;
-    OCR1AL = round((0.3*turning_value)+47);
+    OCR1AL = round((-1.246*analog_value+747.6));
 }
 
 void pwm_init ()
