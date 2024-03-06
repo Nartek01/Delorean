@@ -17,6 +17,10 @@ int main(void)
 {
     pwm_init();
     
+    
+    uint8_t range_low = 90;
+    uint16_t range_high = 150;
+    
     while(1)
     {
         perf_sensor_right_reading();
@@ -24,10 +28,20 @@ int main(void)
         
         if (c_r > c_l)
         {
-            if (c_r > 200)
+            /*if (c_r >  range_low && c_r < range_high)
             {
-                servo_function(-25);
+                servo_function(25);
             }
+            else if ((c_r > range_high && c_r < 1023))
+            {
+                servo_function(40);
+            }*/
+            
+            if (c_r >  range_low)
+            {
+                servo_function(40);
+            }
+            
             else
             {
                 servo_function(0);
@@ -37,11 +51,22 @@ int main(void)
         else if (c_r < c_l)
         {
             
-            if (c_l > 200)
+            /*if (c_l > range_low && c_l < range_high)
             
             {
-                servo_function(25);
+                servo_function(-25);
             }
+            else if (c_l > range_high && c_l < 1023)
+            
+            {
+                servo_function(-40);
+            }*/
+            
+            if (c_l >  range_low)
+            {
+                servo_function(-40);
+            }
+            
             else
             {
                 servo_function(0);
