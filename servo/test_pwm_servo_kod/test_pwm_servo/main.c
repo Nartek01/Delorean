@@ -17,19 +17,19 @@
 
 int main(void)
 {
-    DDRD = 0b01000000;
-    DDRC = 0b00000000;
+    DDRD = 0b01000000; // D7 utgång
+    DDRC = 0b00000000; //alla ingångar
     
     pwm_init();
     
     while(1)
     {
-        PORTD = 0b01000000;
-        /*perf_sensor_front_reading();
-        pwm_function(c);*/
-        OCR1AH = 0x00;
-        OCR1AL = 0b11111111;
-        
+        PORTD = 0b01000000; // D7
+        perf_sensor_front_reading();
+        pwm_function(c);
+        /*OCR1AH = 0b00000001;
+        OCR1AL = 0b00110111;*/
+        /*OCR1A = 50;*/
     }
 }
 
