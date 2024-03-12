@@ -10,7 +10,6 @@
 #define PWM_SERVO_H_
 
 
-/*Funktion som tolkar om värdet till PWM-värde -50 -> 50*/
 void pwm_function (int16_t analog_value)
 {
     if (analog_value < 246)
