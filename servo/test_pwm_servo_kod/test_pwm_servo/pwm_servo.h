@@ -21,10 +21,11 @@ void pwm_function (int16_t analog_value)
         OCR1A = 0;
         analog_value = 300;
     }    
-    /*OCR1AH = 0b00000010;
-    OCR1AL = round((-1.452214*analog_value)+980.2448);*/
-    /*OCR1A = round((-1.759887*analog_value)+1055.932);*/
-    OCR1A = round((-11.53704*analog_value)+3461.111);
+    //OCR1AH = 0b00000010;
+    //OCR1AL = round((-1.452214*analog_value)+980.2448);
+    //OCR1A = round((-1.759887*analog_value)+1055.932);
+    //OCR1A = round((-11.53704*analog_value)+3461.111);
+    OCR1A = round((-0.6083984*analog_value) + 623);
 }
 
 void pwm_init ()
