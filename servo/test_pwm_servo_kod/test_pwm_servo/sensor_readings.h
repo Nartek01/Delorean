@@ -25,7 +25,7 @@ void perf_sensor_right_reading ();
 /************************************************************************/
 
 uint16_t read_analogue_input(uint8_t input_number) {
-    ADMUX = ((1 << REFS0) | input_number);
+    ADMUX = ((1 << REFS0) | (1 << REFS1) | input_number);
     ADCSRA = ((1 << ADEN) | (1 << ADSC) | (1 << ADPS0) | (1 << ADPS1) | (1 << ADPS2));
     while ((ADCSRA & (1 << ADIF)) == 0) ;
     ADCSRA = (1 << ADIF);

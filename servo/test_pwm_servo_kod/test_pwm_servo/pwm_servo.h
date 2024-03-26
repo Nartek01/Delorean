@@ -19,12 +19,11 @@ void servo_function (int8_t turning_value)
 
 void pwm_init ()
 {
-    DDRB |= (1<<1) | (1<<2);    // Sätter utgångar D9 och D10
-    OCR1AH = 0x00;              //
-    //OCR1AL = 47;                // Sätter duty cycle 47 i mitten, 32 längst åt höger, 62 längst åt *****
-    //OCR1BL = 150;
-    ICR1H = 0b00000010;         // Sätter högstavärdet den räknar till ICR1H = 0b00000010; + ICR1L = 0b01101111; = 50 Hz
-    ICR1L = 0b01101111;         // Sätter högstavärdet den räknar till
+    DDRB |= (1<<1) | (1<<2);        // Sätter utgångar D9 och D10
+    OCR1AH = 0x00;                  //
+    //OCR1AL = 47;                  // Sätter duty cycle 47 i mitten, 32 längst åt höger, 62 längst åt vänster
+    ICR1H = 0b00000010;             // Sätter högstavärdet den räknar till ICR1H = 0b00000010; + ICR1L = 0b01101111; = 50 Hz
+    ICR1L = 0b01101111;         // Sätter högstavärdet den räknar till 623
     TCCR1A = 0xA2;              //
     TCCR1B = 0b00010100;        // första nibble sätter PWM-typen - sista nibble sätter prescaler (detta är 256 prescaler)
 }
